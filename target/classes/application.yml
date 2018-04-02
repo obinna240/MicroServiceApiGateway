@@ -1,0 +1,13 @@
+zuul: #all calls to /api will be proxied using zuul
+  prefix: /api
+  routes:
+    MongoDBService:
+      url: http://localhost:7777
+      path: /MongoDBService/**
+    ContentExtractorService:
+      url: http://localhost:7776
+      path: /ContentExtractorService/**
+
+      
+server:
+  port: 7775
